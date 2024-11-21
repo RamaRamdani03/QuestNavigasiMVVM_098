@@ -26,7 +26,15 @@ import androidx.compose.ui.unit.dp
 fun FormMahasiswaView(
     modifier: Modifier = Modifier,
     listjk: List<String>,
+    onSubmitClicked: (MutableList<String>) -> Unit
 ){
 
-}
+    var nama by rememberSaveable { mutableStateOf("") }
+    var email by remember { mutableStateOf("") }
+    var alamat by remember { mutableStateOf("") }
+    var noHp by remember { mutableStateOf("") }
+    var selectedGender by remember { mutableStateOf("") }
+    var NIM by remember { mutableStateOf("")}
 
+    val dataMahasiswa: MutableList<String> = mutableListOf(nama, selectedGender, alamat, email, noHp, NIM)
+}
