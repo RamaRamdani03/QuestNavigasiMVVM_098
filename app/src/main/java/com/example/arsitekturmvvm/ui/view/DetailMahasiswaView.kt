@@ -19,5 +19,12 @@ fun DetailMahasiswaView(
     modifier: Modifier = Modifier,
     uiStateMahasiswa: DataMahasiswa,
 ){
-
+    val listDataMahasiswa = listOf(
+        Pair("Nama", uiStateMahasiswa.nama),
+        Pair("Gender", uiStateMahasiswa.gender),
+        Pair("Alamat", uiStateMahasiswa.alamat),
+        Pair("Email", uiStateMahasiswa.email),
+        Pair("no HP", uiStateMahasiswa.noHp),
+        Pair("NIM", uiStateMahasiswa.NIM)
+    )
 }
