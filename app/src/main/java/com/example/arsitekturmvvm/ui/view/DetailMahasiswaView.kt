@@ -18,6 +18,7 @@ import com.example.arsitekturmvvm.model.DataMahasiswa
 fun DetailMahasiswaView(
     modifier: Modifier = Modifier,
     uiStateMahasiswa: DataMahasiswa,
+    onBackButton: () -> Unit
 ){
     val listDataMahasiswa = listOf(
         Pair("Nama", uiStateMahasiswa.nama),
@@ -27,4 +28,30 @@ fun DetailMahasiswaView(
         Pair("no HP", uiStateMahasiswa.noHp),
         Pair("NIM", uiStateMahasiswa.NIM)
     )
+
+    Column() {
+        listDataMahasiswa.forEach{ items ->
+            CardSection(
+                judulParam = items.first,
+                isiParam = items.second
+            )
+        }
+    }
+}
+@Composable
+fun CardSection(judulParam:String, isiParam:String){
+    Column(
+        horizontalAlignment = Alignment.Start
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(8.dp),
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            Text(text = judulParam, modifier = Modifier.weight(0.8f))
+            Text(text = ":", modifier = Modifier.weight(0.2f))
+            Text(text = "$isiParam", modifier = Modifier.weight(2f))
+        }
+    }
 }
