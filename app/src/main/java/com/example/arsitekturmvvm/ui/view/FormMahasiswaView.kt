@@ -37,4 +37,18 @@ fun FormMahasiswaView(
     var NIM by remember { mutableStateOf("")}
 
     val dataMahasiswa: MutableList<String> = mutableListOf(nama, selectedGender, alamat, email, noHp, NIM)
+
+    Column (
+        Modifier
+            .fillMaxSize()
+            .padding(16.dp)
+        , horizontalAlignment = Alignment.CenterHorizontally){
+        OutlinedTextField(value = nama,
+            onValueChange = {nama = it},
+            placeholder = { Text("Masukan nama")}
+            ,label = {Text("Nama")}
+            ,modifier = Modifier
+                .fillMaxWidth()
+                .padding(5.dp))
+    }
 }
