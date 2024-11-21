@@ -50,5 +50,16 @@ fun FormMahasiswaView(
             ,modifier = Modifier
                 .fillMaxWidth()
                 .padding(5.dp))
+
+        Row (){
+            listjk.forEach { item ->
+                Row (verticalAlignment = Alignment.CenterVertically){
+                    RadioButton(selected = selectedGender == item,
+                        onClick = {
+                            selectedGender = item
+                    })
+                    Text(item) }
+            }
+        }
     }
 }
