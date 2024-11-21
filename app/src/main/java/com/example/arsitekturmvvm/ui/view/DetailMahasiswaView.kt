@@ -13,7 +13,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.arsitekturmvvm.model.DataMahasiswa
 
-
 @Composable
 fun DetailMahasiswaView(
     modifier: Modifier = Modifier,
@@ -36,8 +35,12 @@ fun DetailMahasiswaView(
                 isiParam = items.second
             )
         }
+        Button(onClick = {onBackButton()}) {
+            Text(text = "Kembali")
+        }
     }
 }
+
 @Composable
 fun CardSection(judulParam:String, isiParam:String){
     Column(
