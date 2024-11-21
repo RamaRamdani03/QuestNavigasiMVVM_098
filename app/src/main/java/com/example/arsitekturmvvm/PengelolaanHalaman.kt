@@ -35,7 +35,20 @@ fun PengelolaHalaman(
             modifier = modifier.padding(isipadding),
             navController = navController, startDestination = Halaman.Formulir.name
         ) {
+            composable(route = Halaman.Formulir.name){
+                val konteks = LocalContext.current
+                FormMahasiswaView(
 
+                    //Di bawah ini merupakan dari parameter halaman FormulirView
+                    listjk = DataJenisKelamin.listjk.map { //Data JenisKelamin dapat dari object
+                        id -> konteks.resources.getString(id)
+                    },
+                    onSubmitClicked = {
+                        viewModel.saveDataM(it)
+                        navController.navigate(Halaman.Detail.name)
+                    }
+                )
+            }
         }
     }
 }
