@@ -29,5 +29,13 @@ fun PengelolaHalaman(
     navController: NavHostController = rememberNavController(),
     viewModel: MahasiswaViewModel = viewModel()
 ) {
+    Scaffold {isipadding ->
+        val stateUI by viewModel.uiState.collectAsState()
+        NavHost(
+            modifier = modifier.padding(isipadding),
+            navController = navController, startDestination = Halaman.Formulir.name
+        ) {
 
+        }
+    }
 }
