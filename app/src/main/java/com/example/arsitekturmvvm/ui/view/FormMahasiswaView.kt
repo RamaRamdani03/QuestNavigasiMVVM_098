@@ -26,6 +26,7 @@ import androidx.compose.ui.unit.dp
 fun FormMahasiswaView(
     modifier: Modifier = Modifier,
     listjk: List<String>,
+    onSubmitClicked: (MutableList<String>) -> Unit
 ){
 
     var nama by rememberSaveable { mutableStateOf("") }
@@ -95,5 +96,10 @@ fun FormMahasiswaView(
             ,modifier = Modifier
                 .fillMaxWidth()
                 .padding(5.dp))
+
+        Button(onClick = { onSubmitClicked(dataMahasiswa)})
+        {
+            Text("Simpan")
+        }
     }
 }
