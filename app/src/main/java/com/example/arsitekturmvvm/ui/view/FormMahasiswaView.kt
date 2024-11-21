@@ -26,7 +26,6 @@ import androidx.compose.ui.unit.dp
 fun FormMahasiswaView(
     modifier: Modifier = Modifier,
     listjk: List<String>,
-    onSubmitClicked: (MutableList<String>) -> Unit
 ){
 
     var nama by rememberSaveable { mutableStateOf("") }
@@ -61,5 +60,40 @@ fun FormMahasiswaView(
                     Text(item) }
             }
         }
+
+
+        OutlinedTextField(value = email,
+            onValueChange = {email = it},
+            placeholder = { Text("Masukan email")}
+            ,label = {Text("email")}
+            ,modifier = Modifier
+                .fillMaxWidth()
+                .padding(5.dp))
+
+        OutlinedTextField(value = alamat,
+            onValueChange = {alamat = it},
+            placeholder = { Text("Masukan alamat")}
+            ,label = {Text("alamat")}
+            ,modifier = Modifier
+                .fillMaxWidth()
+                .padding(5.dp))
+
+        OutlinedTextField(value = noHp,
+            onValueChange = {noHp = it},
+            placeholder = { Text("Masukan noHp")}
+            ,label = {Text("noHp")}
+            , keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
+            ,modifier = Modifier
+                .fillMaxWidth()
+                .padding(5.dp))
+
+        OutlinedTextField(value = NIM,
+            onValueChange = {NIM = it},
+            placeholder = { Text("Masukan NIM")}
+            ,label = {Text("NIM")}
+            , keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
+            ,modifier = Modifier
+                .fillMaxWidth()
+                .padding(5.dp))
     }
 }
