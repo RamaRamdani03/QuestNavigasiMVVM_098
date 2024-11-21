@@ -49,6 +49,14 @@ fun PengelolaHalaman(
                     }
                 )
             }
+            composable(route = Halaman.Detail.name) {
+                DetailMahasiswaView( modifier = Modifier,
+                    uiStateMahasiswa = stateUI,
+                    onBackButton ={
+                        navController.popBackStack()
+                    }
+                )
+            }
         }
     }
 }
